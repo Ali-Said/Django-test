@@ -1,0 +1,46 @@
+<a href="/logout/">logout</a>
+<a href="/">Home</a>
+
+
+<div>
+    {% if follow == None %}
+        <a href="/">Log In</a>
+    {% else %}
+        {% if follow %}
+            <a href="/{{ blog.id }}/unfollow/">Unfollow</a>
+        {% else %}
+            <a href="/{{ blog.id }}/follow/">Follow</a>
+        {% endif %}
+    {% endif %}
+</div>
+
+<h2>This is {{ blog.owner.username }}'s blog</h2>
+<p>This blog has {{ blog.views }} view(s)</p>
+
+{% if blog.owner == user %}
+    <a href="/{{ blog.id }}/delete/">Delete Blog</a>
+{% endif %}
+
+{% if posts %}
+	<h3>Posts:-</h3>
+    <ul>
+    {% for post in posts %}
+        <li>
+        	<a href="/post/{{ post.id }}/">{{ post.title }}</a>
+       		{% if post.user == user %}
+               <a href="/post/{{ post.id }}/delete/">Delete</a>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>This blog has no posts</p>
+{% endif %}
+
+{% if form %}
+    <h3>New Post:</h3>
+    <form action="/{{ blog.id }}/post/create/" method="POST">{% csrf_token %}
+        {{ form }}
+        <input type="submit" value="add post">
+    </form>
+{% endif %}

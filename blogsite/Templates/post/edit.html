@@ -1,0 +1,10 @@
+<a href="/logout/">logout</a>
+<a href="/">Home</a>
+
+{% if form %}
+    <h3>edit post:</h3>
+    <form action="/post/{{ post_id }}/update/" method="POST">{% csrf_token %}
+        {{ form }}
+        <input type="submit"value="edit post">
+    </form>
+{% endif %}

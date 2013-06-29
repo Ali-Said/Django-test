@@ -1,0 +1,23 @@
+<a href="/logout/">logout</a>
+<a href="/">Home</a>
+
+
+<h2>Welcome:{{ user.username }} to Blogawy</h2>
+<h2>Blogs:-</h2>
+
+{% if blogs %}
+    <ul>
+    {% for blog in blogs %}
+        <li>
+       		<a href="/{{ blog.id }}/" >{{ blog.owner.username }}'s Blog:</a>
+       		{% if blog.user == user %}
+       			<a href="/{{ blog.id }}/delete/">Delete Blog</a>
+       		{% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No blogs are available.</p>
+{% endif %}
+
+<a href="/create/" >Create your own blog</a>
