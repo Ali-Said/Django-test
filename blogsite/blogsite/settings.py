@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'C:/Users/Ali Moussa/Documents/Mine Worken/sho3\'lana/blog project/blogsite/blog.db',                      
+        'NAME': 'C:/Users/Ali Moussa/Documents/Mine Worken/sho3\'lana/blog project/Django-test/blogsite/base.db',                      
         'USER': '',
         'PASSWORD': '',
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -107,7 +107,7 @@ ROOT_URLCONF = 'blogsite.urls'
 WSGI_APPLICATION = 'blogsite.wsgi.application'
 
 TEMPLATE_DIRS = (
-     "C:/Users/Ali Moussa/Documents/Mine Worken/sho3'lana/blog project/blogsite/Templates"
+     "C:/Users/Ali Moussa/Documents/Mine Worken/sho3\'lana/blog project/Django-test/blogsite/Templates"
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

@@ -18,6 +18,7 @@
 
 <h2>{{ post.title }}:</h2>
 <p>{{ post.text }}</p>
+<p>{{ post.pub_date }}</p>
 
 {% if post.blog.owner == user %}
   <a href="/post/{{ post.id }}/edit/">Edit this post</a>
@@ -39,7 +40,7 @@
     <ul>
     {% for comment in comments %}
         <li>
-        	<p>{{ comment.user.username }}: "{{ comment.comment }}"</p>
+        	<p>{{ comment.user.username }}: "{{ comment.comment }}" at comment.comm_date</p>
         </li>
     {% endfor %}
     </ul>
