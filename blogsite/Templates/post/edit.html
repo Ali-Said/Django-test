@@ -1,5 +1,11 @@
-<a href="/logout/">logout</a>
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}style.css">
+
+<div class ='top'>
+<a href="/logout/">Log Out</a>
 <a href="/">Home</a>
+</div>
+
+<body>
 
 {% if form %}
     <h3>edit post:</h3>
@@ -8,3 +14,4 @@
         <input type="submit"value="edit post">
     </form>
 {% endif %}
+</body>

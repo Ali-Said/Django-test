@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}style.css">
 <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 <script type="text/javascript">
@@ -8,13 +9,17 @@
   })();
 </script>
 
+<div class ='top'>
 {% if form %}
-  <a href="/logout/">logout</a>
+  <a href="/logout/">Log Out</a>
 {% else %}
-  <a href="/">login</a>
+  <a href="/">Log in</a>
 {% endif %}
 <a href="/">Home</a>
 
+</div>
+
+<body>
 
 <h2>{{ post.title }}:</h2>
 <p>{{ post.text }}</p>
@@ -54,3 +59,5 @@
     <input type="submit" value="add comment">
   </form>
 {% endif %}
+
+</body>

@@ -1,18 +1,22 @@
-<a href="/logout/">logout</a>
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}style.css">
+
+<div class ='top'>
+<a href="/logout/">Log Out</a>
 <a href="/">Home</a>
 
-
-<div>
-    {% if follow == None %}
-        <a href="/">Log In</a>
+{% if follow == None %}
+    <a href="/">Log In</a>
+{% else %}
+    {% if follow %}
+        <a href="/{{ blog.id }}/unfollow/">Unfollow</a>
     {% else %}
-        {% if follow %}
-            <a href="/{{ blog.id }}/unfollow/">Unfollow</a>
-        {% else %}
-            <a href="/{{ blog.id }}/follow/">Follow</a>
-        {% endif %}
+        <a href="/{{ blog.id }}/follow/">Follow</a>
     {% endif %}
+{% endif %}
+
 </div>
+
+<body>
 
 <h2>This is {{ blog.owner.username }}'s blog</h2>
 <p>This blog has {{ blog.views }} view(s)</p>
@@ -44,3 +48,5 @@
         <input type="submit" value="add post">
     </form>
 {% endif %}
+
+</body>

@@ -1,10 +1,13 @@
-<a href="/logout/">logout</a>
-<a href="/">Home</a>
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}style.css">
 
+<div class ='top'>
+<a href="/logout/">Log Out</a>
+<a href="/">Home</a>
+</div>
 
 <h2>Welcome:{{ user.username }} to Blogawy</h2>
 <h2>Blogs:-</h2>
-
+<body>
 {% if blogs %}
     <ul>
     {% for blog in blogs %}
@@ -21,3 +24,4 @@
 {% endif %}
 
 <a href="/create/" >Create your own blog</a>
+</body>
